@@ -60,6 +60,16 @@
       "path": "/logout",
       "methods": ["GET"],
       "action": "Metinet:Controllers:SecurityController::logout"
+    },
+    "signin": {
+      "path": "/signin",
+      "methods": ["GET"],
+      "action": "Metinet:Controllers:CandidatesController::signIn"
+    },
+    "sendForm": {
+      "path": "/sendForm",
+      "methods": ["POST"],
+      "action": "Metinet:Controllers:SecurityController::signIn"
     }
   }
 }

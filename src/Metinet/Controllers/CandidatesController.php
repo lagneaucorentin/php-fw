@@ -4,6 +4,7 @@ namespace Metinet\Controllers;
 
 use Metinet\Core\Http\Request;
 use Metinet\Core\Http\Response;
+use Metinet\Core\Templating\PhpViewRenderer;
 
 /**
  * @author Boris Guéry <guery.b@gmail.com>
@@ -32,5 +33,12 @@ class CandidatesController
         }
 
         return new Response($content);
+    }
+
+    public function signIn(Request $request): Response
+    {
+        $viewRenderer = new PhpViewRenderer(__DIR__ . '/../Resources/views/', __DIR__ . '/../Resources/views/layout.html.php');
+
+        return new Response($viewRenderer->render('signInForm.html.php'));
     }
 }
